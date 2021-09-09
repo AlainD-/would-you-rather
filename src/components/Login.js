@@ -1,12 +1,23 @@
 import { useState } from 'react';
+import { useHistory } from 'react-router';
+import { useSelector, useDispatch } from 'react-redux';
+import { sortBy as _sortBy } from 'lodash/fp';
 import { Button } from 'primereact/button';
 import { Card } from 'primereact/card';
 import { Dropdown } from 'primereact/dropdown';
+import { setAuthedUser } from '../actions';
+
+function getUsers({users}) {
+  return _sortBy(user => user.name)(Object.keys(users).map(id => users[id]));
+}
 
 export default function Login() {
+  const history = useHistory();
+  const dispatch = useDispatch();
+  const users = useSelector(getUsers);
+  const [user, setUser] = useState(null);
+
   const header = <img alt="logo" src='images/logo/logo_6.svg' style={{backgroundColor: 'var(--blue-900)'}} />;
-  const [user, setUser] = useState('');
-  const [users, setUsers] = useState([]); // @todo should be get from the store
 
   const handleChange = e => {
     setUser(() => e.target.value);
@@ -14,6 +25,8 @@ export default function Login() {
 
   const handleSubmit = e => {
     e.preventDefault();
+    dispatch(setAuthedUser(user.id));
+    history.push('/');
   };
 
   return (
@@ -30,7 +43,7 @@ export default function Login() {
             <label htmlFor="user">Select User</label>
           </span>
         </div>
-        <Button type="submit" label="Submit" className="mt-2" />
+        <Button type="submit" label="Submit" className="mt-2" disabled={!user} />
       </form>
     </Card>
   );
