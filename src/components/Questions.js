@@ -1,6 +1,7 @@
 import { useSelector } from 'react-redux';
 import { sortBy as _sortBy } from 'lodash/fp';
 import { TabView, TabPanel } from 'primereact/tabview';
+import QuestionPreview from './QuestionPreview';
 
 function getUserQuestions({authedUser, users, questions}) {
   const answeredQuestionIds = !authedUser ? [] : Object.keys(users[authedUser]?.answers || {});
@@ -19,12 +20,12 @@ export default function Questions() {
     <TabView>
       <TabPanel header="Unanswered Questions">
         {unAnsweredQuestionIds.map(id => (
-          <div key={id}>Question ID: {id}</div>
+          <QuestionPreview key={id} id={id} />
         ))}
       </TabPanel>
       <TabPanel header="Answered Questions">
         {answeredQuestionIds.map(id => (
-          <div key={id}>Question ID: {id}</div>
+          <QuestionPreview key={id} id={id} />
         ))}
       </TabPanel>
     </TabView>
