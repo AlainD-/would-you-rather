@@ -1,26 +1,23 @@
 import { useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 import { Button } from 'primereact/button';
 import { Divider } from 'primereact/divider';
 import { Panel } from 'primereact/panel';
+import { getQuestion } from './../utils/helper';
 import QuestionNotFound from './QuestionNotFound';
-
-function getQuestion({questions, users, authedUser}, id) {
-  const question = questions[id];
-  const author = !question ? null : users[question.author];
-  return {
-    question,
-    author,
-    authedUser
-  };
-}
 
 export default function QuestionPreview({id}) {
   const {question, author, authedUser} = useSelector(state => getQuestion(state, id));
+  const history = useHistory();
   const descriptionMax = 20;
 
   if (!question) {
     return <QuestionNotFound />;
   }
+
+  const toPoll = () => {
+    history.push(`/questions/${id}`);
+  };
 
   const shortText = `...${question.optionOne.text.substring(0, descriptionMax)}...`;
 
@@ -39,6 +36,7 @@ export default function QuestionPreview({id}) {
             label="View Poll"
             className="p-button-outlined p-button-sm"
             disabled={!authedUser}
+            onClick={toPoll}
           />
         </div>
       </div>

@@ -13,6 +13,7 @@ import Login from './Login';
 import Questions from './Questions';
 import PageNotFound from './PageNotFound';
 import NavBar from './Navbar';
+import QuestionPoll from './QuestionPoll';
 
 export default function App() {
   const dispatch = useDispatch();
@@ -29,13 +30,16 @@ export default function App() {
         <div className="flex-column">
           <NavBar />
           <LoadingBar />
-          <h3>Would You Rather?</h3>
+          <div className="mb-3"></div>
           <Switch>
             <Route exact path="/">
               <Questions />
             </Route>
             <Route path="/login">
               <Login />
+            </Route>
+            <Route path="/questions/:id">
+              <QuestionPoll />
             </Route>
             <Route>
               <PageNotFound />
