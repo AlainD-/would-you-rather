@@ -31,6 +31,13 @@ let users = {
       "6ni6ok3ym7mf1p33lnez": 'optionTwo'
     },
     questions: ['6ni6ok3ym7mf1p33lnez', 'xj352vofupe1dqz9emx13r'],
+  },
+  alaindeurveilher: {
+    id: 'alaindeurveilher',
+    name: 'Alain D\'eurveilher',
+    avatarURL: '/images/avatars/alaindeurveilher.png',
+    answers: {},
+    questions: []
   }
 }
 

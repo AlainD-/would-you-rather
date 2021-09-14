@@ -3,15 +3,24 @@ import { Divider } from 'primereact/divider';
 import { Panel } from 'primereact/panel';
 import { getQuestion } from '../utils/helper';
 import QuestionNotFound from './QuestionNotFound';
+import PollAnswer from './PollAnswer';
+import PollUnAnswered from './PollUnAnswered';
 
 export default function PollAnswered({id}) {
-  const {question, author, authedUser} = useSelector(state => getQuestion(state, id));
+  const {question, author, authedUser, isAnswered} = useSelector(state => getQuestion(state, id));
+  const options = ['optionOne', 'optionTwo'];
 
   if (!question) {
     return <QuestionNotFound />;
   }
 
+  if (!isAnswered) {
+    return <PollUnAnswered id={id} />;
+  }
+
   const isAnsweredByUser = option => question[option].votes.includes(authedUser);
+
+  const totalVotes = options.map(option => question[option].votes.length).reduce((a, b) => a + b, 0);
 
   const header = `Asked by ${author.name}:`;
 
@@ -22,8 +31,15 @@ export default function PollAnswered({id}) {
         <Divider layout="vertical" />
         <div className="p-fluid flex-grow-1 align-items-center justify-content-center">
           <h3>Results</h3>
-          {['optionOne', 'optionTwo'].map(option => (
-            <div key={option}>Would you rather {question[option].text}? {isAnsweredByUser(option) && '*'}</div>
+          {options.map(option => (
+            <PollAnswer
+              key={option}
+              option={option}
+              text={`Would you rather ${question[option].text}?`}
+              isUserVote={isAnsweredByUser(option)}
+              totalVotes={totalVotes}
+              voted={question[option].votes.length}
+            />
           ))}
         </div>
       </div>
