@@ -1,16 +1,12 @@
 import { useState } from 'react';
 import { useHistory } from 'react-router';
 import { useSelector, useDispatch } from 'react-redux';
-import { sortBy as _sortBy } from 'lodash/fp';
 import { Button } from 'primereact/button';
 import { Card } from 'primereact/card';
 import { Dropdown } from 'primereact/dropdown';
 import { setAuthedUser } from '../actions';
+import { getUsers } from '../utils/helper';
 import UserAvatar from './UserAvatar';
-
-function getUsers({users}) {
-  return _sortBy(user => user.name)(Object.keys(users).map(id => users[id]));
-}
 
 export default function Login() {
   const history = useHistory();
