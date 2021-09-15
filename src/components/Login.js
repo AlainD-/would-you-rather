@@ -29,6 +29,23 @@ export default function Login() {
     history.push('/');
   };
 
+  const userOptionTemplate = (user) => {
+    return (
+      <div className="flex align-items-center">
+        <img alt="avatar" src={user.avatarURL} height="30px" />
+        <div className="ml-2">{user.name}</div>
+      </div>
+    );
+  };
+
+  const selectedUserTemplate = (user) => {
+    if (user) {
+      return userOptionTemplate(user);
+    }
+
+    return <span>Select User</span>;
+  };
+
   return (
     <Card
       title="Welcome to the Would You Rather game"
@@ -39,11 +56,25 @@ export default function Login() {
       <form onSubmit={handleSubmit} className="p-fluid">
         <div className="p-field mb-1">
           <span className="p-float-label">
-            <Dropdown id="user" name="user" value={user} onChange={handleChange} options={users} optionLabel="name" />
+            <Dropdown
+              id="user"
+              name="user"
+              value={user}
+              onChange={handleChange}
+              options={users}
+              optionLabel="name"
+              valueTemplate={selectedUserTemplate}
+              itemTemplate={userOptionTemplate}
+            />
             <label htmlFor="user">Select User</label>
           </span>
         </div>
-        <Button type="submit" label="Submit" className="mt-2" disabled={!user} />
+        <Button
+          type="submit"
+          label="Submit"
+          className="mt-2"
+          disabled={!user}
+        />
       </form>
     </Card>
   );
