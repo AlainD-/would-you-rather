@@ -8,6 +8,7 @@ import { handleAnswerPoll } from './../actions/shared';
 import QuestionNotFound from './QuestionNotFound';
 import PollOptionChoice from './PollOptionChoice';
 import PollAnswered from './PollAnswered';
+import UserAvatar from './UserAvatar';
 
 export default function PollUnAnswered({id}) {
   const dispatch = useDispatch();
@@ -36,7 +37,7 @@ export default function PollUnAnswered({id}) {
   return (
     <Panel header={header}>
       <div className="flex">
-        <img alt="avatar" src={author.avatarURL} height="90px" />
+        <UserAvatar url={author.avatarURL} />
         <Divider layout="vertical" />
         <form
           onSubmit={handleSubmit}

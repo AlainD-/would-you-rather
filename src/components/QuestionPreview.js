@@ -5,6 +5,7 @@ import { Divider } from 'primereact/divider';
 import { Panel } from 'primereact/panel';
 import { getQuestion } from './../utils/helper';
 import QuestionNotFound from './QuestionNotFound';
+import UserAvatar from './UserAvatar';
 
 export default function QuestionPreview({id}) {
   const {question, author, authedUser} = useSelector(state => getQuestion(state, id));
@@ -26,7 +27,7 @@ export default function QuestionPreview({id}) {
   return(
     <Panel header={header} className="mb-3">
       <div className="flex">
-        <img alt="avatar" src={author.avatarURL} height="90px" />
+        <UserAvatar url={author.avatarURL} />
         <Divider layout="vertical" />
         <div className="p-fluid flex-grow-1 align-items-center justify-content-center">
           <h3>Would you rather</h3>

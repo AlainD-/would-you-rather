@@ -5,6 +5,7 @@ import { getQuestion } from '../utils/helper';
 import QuestionNotFound from './QuestionNotFound';
 import PollAnswer from './PollAnswer';
 import PollUnAnswered from './PollUnAnswered';
+import UserAvatar from './UserAvatar';
 
 export default function PollAnswered({id}) {
   const {question, author, authedUser, isAnswered} = useSelector(state => getQuestion(state, id));
@@ -27,7 +28,7 @@ export default function PollAnswered({id}) {
   return (
     <Panel header={header}>
       <div className="flex">
-        <img alt="avatar" src={author.avatarURL} height="90px" />
+        <UserAvatar url={author.avatarURL} />
         <Divider layout="vertical" />
         <div className="p-fluid flex-grow-1 align-items-center justify-content-center">
           <h3>Results</h3>

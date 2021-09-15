@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Menubar } from 'primereact/menubar';
 import { Button } from 'primereact/button';
 import { setAuthedUser } from '../actions';
+import UserAvatar from './UserAvatar';
 
 export default function NavBar() {
   const history = useHistory();
@@ -15,14 +16,14 @@ export default function NavBar() {
     history.push('/login');
   };
 
-  const start = <img alt="logo" src="images/logo/logo_6.svg" onError={(e) => e.target.src='https://www.primefaces.org/wp-content/uploads/2020/05/placeholder.png'} height="50px" className="mr-2"></img>;
+  const start = <img alt="logo" src="/images/logo/logo_6.svg" height="50px" className="mr-2"></img>;
 
   const end = (
     <div className="ml-4 flex align-content-center">
       {authedUser && (
         <>
           <div className="flex align-items-center justify-content-center mr-2">Hello, <strong className="ml-1">{users[authedUser]?.name}</strong></div>
-          <img alt="avatar" src={users[authedUser]?.avatarURL} height="40px" className="mr-2" />
+          <UserAvatar url={users[authedUser]?.avatarURL} height="40px" className="mr-2" />
           <Button type="button" label="Logout" onClick={onLogout} />
         </>
       )}

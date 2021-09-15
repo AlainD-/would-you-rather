@@ -6,6 +6,7 @@ import { Button } from 'primereact/button';
 import { Card } from 'primereact/card';
 import { Dropdown } from 'primereact/dropdown';
 import { setAuthedUser } from '../actions';
+import UserAvatar from './UserAvatar';
 
 function getUsers({users}) {
   return _sortBy(user => user.name)(Object.keys(users).map(id => users[id]));
@@ -17,7 +18,7 @@ export default function Login() {
   const users = useSelector(getUsers);
   const [user, setUser] = useState(null);
 
-  const header = <img alt="logo" src='images/logo/logo_6.svg' style={{backgroundColor: 'var(--blue-900)'}} />;
+  const header = <img alt="logo" src='/images/logo/logo_6.svg' style={{backgroundColor: 'var(--blue-900)'}} />;
 
   const handleChange = e => {
     setUser(() => e.target.value);
@@ -32,8 +33,8 @@ export default function Login() {
   const userOptionTemplate = (user) => {
     return (
       <div className="flex align-items-center">
-        <img alt="avatar" src={user.avatarURL} height="30px" />
-        <div className="ml-2">{user.name}</div>
+        <UserAvatar url={user.avatarURL} height="30px" className="mr-2" />
+        <div>{user.name}</div>
       </div>
     );
   };
