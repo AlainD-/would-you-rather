@@ -15,6 +15,7 @@ import PageNotFound from './PageNotFound';
 import NavBar from './Navbar';
 import QuestionPoll from './QuestionPoll';
 import LeaderBoard from './LeaderBoard';
+import NewQuestion from './NewQuestion';
 
 export default function App() {
   const dispatch = useDispatch();
@@ -38,6 +39,9 @@ export default function App() {
             </Route>
             <Route path="/login">
               <Login />
+            </Route>
+            <Route path="/new">
+              <NewQuestion />
             </Route>
             <Route path="/leader-board">
               <LeaderBoard />

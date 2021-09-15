@@ -1,4 +1,4 @@
-import { FETCH_USERS, ANSWER_POLL } from './../actions';
+import { FETCH_USERS, ANSWER_POLL, ADD_QUESTION } from './../actions';
 
 export default function users(state = {}, action) {
   switch (action.type) {
@@ -24,6 +24,19 @@ export default function users(state = {}, action) {
                 since "no cheating" is a requirement!
             */
           }
+        }
+      };
+    case ADD_QUESTION:
+      const {question} = action;
+      const {author} = question;
+      return {
+        ...state,
+        [author]: {
+          ...state[author],
+          questions: [
+            ...state[author].questions,
+            question.id
+          ]
         }
       };
     default:

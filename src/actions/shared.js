@@ -2,9 +2,10 @@ import { showLoading, hideLoading } from 'react-redux-loading-bar';
 import { getInitialData } from '../utils/api';
 import { fetchUsers } from './users';
 import { fetchQuestions } from './questions';
-import { saveQuestionAnswer, apiLogger } from '../utils/api';
+import { apiLogger, saveQuestion, saveQuestionAnswer } from '../utils/api';
 
 export const ANSWER_POLL = 'ANSWER_POLL';
+export const ADD_QUESTION = 'ADD_QUESTION';
 
 export function handleInitialData() {
   return async (dispatch) => {
@@ -27,7 +28,7 @@ function answerQuestion({authedUser, qid, answer}) {
 
 /**
  * Handle when a user answers a question
- * @param {{authedUser, qid, answer}} info
+ * @param {{authedUser: string, qid: string, answer: string}} info
  * @returns {(dispatch: any) => Promise<void>}
  */
 export function handleAnswerPoll(info) {
@@ -40,6 +41,27 @@ export function handleAnswerPoll(info) {
     } catch (error) {
       apiLogger('An error occurred in handleAnswerQuestion', error);
       // @todo It would be nice to display a nice toast error message
+      dispatch(hideLoading());
+    }
+  };
+};
+
+function addQuestion(question) {
+  return {
+    type: ADD_QUESTION,
+    question
+  };
+}
+
+export function handleAddQuestion({authedUser: author, optionOneText, optionTwoText}) {
+  return async dispatch => {
+    dispatch(showLoading());
+    try {
+      const question = await saveQuestion({author, optionOneText, optionTwoText});
+      dispatch(addQuestion(question));
+      dispatch(hideLoading());
+    } catch (error) {
+      apiLogger('An error occurred in handleAddQuestion', error);
       dispatch(hideLoading());
     }
   };
