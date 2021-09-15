@@ -13,6 +13,7 @@ export default function NewQuestion() {
   const authedUser = useSelector(({authedUser}) => authedUser);
   const [optionOneText, setOptionOneText] = useState(null);
   const [optionTwoText, setOptionTwoText] = useState(null);
+  const max = 100;// @todo handle UX for near max length
 
   const isDisabled = !optionOneText || !optionTwoText;
 
@@ -35,6 +36,7 @@ export default function NewQuestion() {
           value={optionOneText}
           onChange={e => setOptionOneText(() => e.target.value)}
           placeholder="Enter the first option here"
+          maxLength={max}
         />
         <Divider align="center">OR</Divider>
         <InputText
@@ -43,6 +45,7 @@ export default function NewQuestion() {
           value={optionTwoText}
           onChange={e => setOptionTwoText(() => e.target.value)}
           placeholder="Enter the second option here"
+          maxLength={max}
         />
         <Button
           type="submit"
