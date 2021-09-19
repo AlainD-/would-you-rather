@@ -26,7 +26,7 @@ export default function PollUnAnswered({id}) {
 
   const handleSubmit = e => {
     e.preventDefault();
-    if (answer) {// @todo: basic form validation to be improved for a better UX
+    if (answer) {
       dispatch(handleAnswerPoll({authedUser, qid: id, answer}));
       setAnswer(() => null);
     }

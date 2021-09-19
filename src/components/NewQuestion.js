@@ -13,9 +13,11 @@ export default function NewQuestion() {
   const authedUser = useSelector(({authedUser}) => authedUser);
   const [optionOneText, setOptionOneText] = useState(null);
   const [optionTwoText, setOptionTwoText] = useState(null);
-  const max = 100;// @todo handle UX for near max length
+  const maxLength = 100;
 
   const isDisabled = !optionOneText || !optionTwoText;
+
+  const characterLeft = option => !option ? maxLength : maxLength - option.length;
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -36,8 +38,9 @@ export default function NewQuestion() {
           value={optionOneText}
           onChange={e => setOptionOneText(() => e.target.value)}
           placeholder="Enter the first option here"
-          maxLength={max}
+          maxLength={maxLength}
         />
+        {characterLeft(optionOneText) < 30 && <small id="optionOneText-help" className="p-error p-d-block">{characterLeft(optionOneText)}</small>}
         <Divider align="center">OR</Divider>
         <InputText
           type="text"
@@ -45,8 +48,9 @@ export default function NewQuestion() {
           value={optionTwoText}
           onChange={e => setOptionTwoText(() => e.target.value)}
           placeholder="Enter the second option here"
-          maxLength={max}
+          maxLength={maxLength}
         />
+        {characterLeft(optionTwoText) < 30 && <small id="optionTwoText-help" className="p-error p-d-block">{characterLeft(optionTwoText)}</small>}
         <Button
           type="submit"
           label="Submit"
