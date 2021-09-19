@@ -7,27 +7,29 @@ import InfoMessage from './InfoMessage';
 function getUserQuestions({authedUser, users, questions}) {
   const answeredQuestionIds = !authedUser ? [] : Object.keys(users[authedUser]?.answers || {});
   const unAnsweredQuestionIds = Object.keys(questions).filter(id => !answeredQuestionIds.includes(id));
-  // @todo manage sort by date
+  // sort by date: most recent first
+  const answeredQuestions = _sortBy(({timestamp}) => -timestamp)(answeredQuestionIds.map(id => questions[id]));
+  const unAnsweredQuestions = _sortBy(({timestamp}) => -timestamp)(unAnsweredQuestionIds.map(id => questions[id]));
   return {
-    answeredQuestionIds,
-    unAnsweredQuestionIds
+    answeredQuestions,
+    unAnsweredQuestions
   };
 }
 
 export default function Questions() {
-  const {answeredQuestionIds, unAnsweredQuestionIds} = useSelector(getUserQuestions);
+  const {answeredQuestions, unAnsweredQuestions} = useSelector(getUserQuestions);
 
   return (
     <TabView>
       <TabPanel header="Unanswered Questions">
-        {!unAnsweredQuestionIds.length && <InfoMessage text="There are no new questions at the moment." />}
-        {unAnsweredQuestionIds.map(id => (
+        {!unAnsweredQuestions.length && <InfoMessage text="There are no new questions at the moment." />}
+        {unAnsweredQuestions.map(({id}) => (
           <QuestionPreview key={id} id={id} />
         ))}
       </TabPanel>
       <TabPanel header="Answered Questions">
-        {!answeredQuestionIds.length && <InfoMessage text="You have not answered any question yet." />}
-        {answeredQuestionIds.map(id => (
+        {!answeredQuestions.length && <InfoMessage text="You have not answered any question yet." />}
+        {answeredQuestions.map(({id}) => (
           <QuestionPreview key={id} id={id} />
         ))}
       </TabPanel>

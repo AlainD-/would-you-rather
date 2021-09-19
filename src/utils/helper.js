@@ -1,4 +1,4 @@
-import { sortBy as _sortBy, take as _take } from 'lodash/fp';
+import { sortBy as _sortBy } from 'lodash/fp';
 
 export function getQuestion({questions, users, authedUser}, id) {
   const question = questions[id];
@@ -30,5 +30,5 @@ export function getLeaderBoard({users}) {
     }
   ));
 
-  return _take(3)(_sortBy(user => -user.score)(scoredUsers));
+  return _sortBy(user => -user.score)(scoredUsers);
 }

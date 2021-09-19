@@ -1,4 +1,3 @@
-
 import { SET_AUTHED_USER } from './../actions';
 
 export default function authedUser(state = null, action) {
