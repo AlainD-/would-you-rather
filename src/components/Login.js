@@ -14,7 +14,7 @@ export default function Login() {
   const users = useSelector(getUsers);
   const [user, setUser] = useState(null);
 
-  const header = <img alt="logo" src='/images/logo/logo_6.svg' style={{backgroundColor: 'var(--blue-900)'}} />;
+  const header = <img alt="logo" src='/images/logo/logo.svg' style={{backgroundColor: 'var(--blue-900)'}} />;
 
   const handleChange = e => {
     setUser(() => e.target.value);

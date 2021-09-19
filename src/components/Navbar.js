@@ -16,7 +16,7 @@ export default function NavBar() {
     history.push('/login');
   };
 
-  const start = <img alt="logo" src="/images/logo/logo_6.svg" height="50px" className="mr-2"></img>;
+  const start = <img alt="logo" src="/images/logo/logo.svg" height="50px" className="mr-2"></img>;
 
   const end = (
     <div className="ml-4 flex align-content-center">
