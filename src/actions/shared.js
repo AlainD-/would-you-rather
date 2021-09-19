@@ -3,6 +3,7 @@ import { getInitialData } from '../utils/api';
 import { fetchUsers } from './users';
 import { fetchQuestions } from './questions';
 import { apiLogger, saveQuestion, saveQuestionAnswer } from '../utils/api';
+import { setErrorMessage } from './error';
 
 export const ANSWER_POLL = 'ANSWER_POLL';
 export const ADD_QUESTION = 'ADD_QUESTION';
@@ -40,7 +41,7 @@ export function handleAnswerPoll(info) {
       dispatch(hideLoading());
     } catch (error) {
       apiLogger('An error occurred in handleAnswerQuestion', error);
-      // @todo It would be nice to display a nice toast error message
+      dispatch(setErrorMessage('Something wrong happened during your vote. Please try again.'));
       dispatch(hideLoading());
     }
   };
@@ -62,6 +63,7 @@ export function handleAddQuestion({authedUser: author, optionOneText, optionTwoT
       dispatch(hideLoading());
     } catch (error) {
       apiLogger('An error occurred in handleAddQuestion', error);
+      dispatch(setErrorMessage('Something wrong happened when submitting the question. Please try again.'));
       dispatch(hideLoading());
     }
   };

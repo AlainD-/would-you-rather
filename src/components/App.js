@@ -16,6 +16,7 @@ import NavBar from './Navbar';
 import QuestionPoll from './QuestionPoll';
 import LeaderBoard from './LeaderBoard';
 import NewQuestion from './NewQuestion';
+import ErrorMessage from './ErrorMessage';
 
 export default function App() {
   const dispatch = useDispatch();
@@ -32,6 +33,7 @@ export default function App() {
         <div className="flex-column">
           <NavBar />
           <LoadingBar />
+          <ErrorMessage />
           <div className="mb-3"></div>
           <Switch>
             <Route exact path="/">
