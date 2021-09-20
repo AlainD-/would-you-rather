@@ -29,9 +29,9 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 ### Deployment
 
 * Run `npm run build` to build a production version of this application.
-* Delete all the content of the `showcase` folder
-* Move all the static content of the `build` folder into `showcase`
-* Commit and push the changes in `showcase`
+* Delete all the content of the `docs` folder
+* Move all the static content of the `build` folder into `docs`
+* Commit and push the changes in `docs`
 
 ## Important information
 
