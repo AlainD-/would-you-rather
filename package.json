@@ -6,6 +6,7 @@
     "type": "git",
     "url": "https://github.com/AlainD-/would-you-rather.git"
   },
+  "homepage": "https://alaind-.github.io/would-you-rather",
   "dependencies": {
     "lodash": "4.17.21",
     "primeflex": "3.0.1",
