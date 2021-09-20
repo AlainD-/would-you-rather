@@ -15,8 +15,6 @@ Will _YOU_ be able to reach the top 3? **Let's play!**
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), and uses *react* and *redux*.
 
-A live showcase of this application is available at this url: [showcase](https://alaind-.github.io/would-you-rather/)
-
 ### Installation
 
 Execute `npm install` or `npm i` from the root folder in order to install the required packages.
@@ -25,13 +23,6 @@ Execute `npm install` or `npm i` from the root folder in order to install the re
 
 You can start the application by running `npm start`.
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-### Deployment
-
-* Run `npm run build` to build a production version of this application.
-* Delete all the content of the `docs` folder
-* Move all the static content of the `build` folder into `docs`
-* Commit and push the changes in `docs`
 
 ## Important information
 
