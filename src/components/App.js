@@ -42,10 +42,10 @@ export default function App() {
               <Route path="/login">
                 <Login />
               </Route>
-              <Route path="/new">
+              <Route path="/add">
                 <NewQuestion />
               </Route>
-              <Route path="/leader-board">
+              <Route path="/leaderboard">
                 <LeaderBoard />
               </Route>
               <Route path="/questions/:id">

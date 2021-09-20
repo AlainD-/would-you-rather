@@ -32,8 +32,8 @@ export default function NavBar() {
 
   const menu = [
     {label: 'Home', command: () => history.push('/'), disabled: !authedUser},
-    {label: 'New Question', command: () => history.push('/new'), disabled: !authedUser},
-    {label: 'Leader Board', command: () => history.push('/leader-board'), disabled: !authedUser},
+    {label: 'New Question', command: () => history.push('/add'), disabled: !authedUser},
+    {label: 'Leader Board', command: () => history.push('/leaderboard'), disabled: !authedUser},
     {label: 'Login', command: () => history.push('/login'), style: {display: !authedUser ? 'list-item' : 'none'}}
   ];
 
