@@ -15,7 +15,7 @@ Will _YOU_ be able to reach the top 3? **Let's play!**
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), and uses *react* and *redux*.
 
-A live showcase of this application is available at this url: [showcase](https://AlainD-.github.io/would-you-rather/)
+A live showcase of this application is available at this url: [showcase](https://alaind-.github.io/would-you-rather/)
 
 ### Installation
 
