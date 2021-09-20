@@ -1,7 +1,11 @@
 {
   "name": "would-you-rather",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AlainD-/would-you-rather.git"
+  },
   "dependencies": {
     "lodash": "4.17.21",
     "primeflex": "3.0.1",

@@ -1,74 +1,42 @@
 # Would You Rather?
 
-INSERT DESCRIPTION HERE!
+This is a version of the famous "Would you rather" game. You need to sign in in order to play.
 
-# Getting Started with Create React App
+A player is asked a question which he/she can choose between 2 choices. The player has to choose only 1 of the 2 choices. Every answer is definitive.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Every player can propose a new question to the rest of the community.
 
-## Available Scripts
+The leader board section list the top ranking players based on the number of the question they answered, and the number of questions they submitted.
+The more questions a player answers and/or submits, the higher score he/she gets in the leader board.
 
-In the project directory, you can run:
+Will _YOU_ be able to reach the top 3? **Let's play!**
 
-### `yarn start`
+## Getting Started
 
-Runs the app in the development mode.\
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), and uses *react* and *redux*.
+
+A live showcase of this application is available at this url: [showcase](https://AlainD-.github.io/would-you-rather/)
+
+### Installation
+
+Execute `npm install` or `npm i` from the root folder in order to install the required packages.
+
+### Run
+
+You can start the application by running `npm start`.
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
 ### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+* Run `npm run build` to build a production version of this application.
+* Delete all the content of the `showcase` folder
+* Move all the static content of the `build` folder into `showcase`
+* Commit and push the changes in `showcase`
 
-### `yarn build` fails to minify
+## Important information
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is part of the nano degree program "React" from Udacity. This project is read-only.
+
+## Contribuiting
+
+If you want to contribute to the project and improve it, check-out the [DEVELOPMENT](DEVELOPMENT.md) instructions.
