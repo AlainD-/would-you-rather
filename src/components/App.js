@@ -34,28 +34,29 @@ export default function App() {
           <NavBar />
           <LoadingBar />
           <ErrorMessage />
-          <div className="mb-3"></div>
-          <Switch>
-            <Route exact path="/">
-              <Questions />
-            </Route>
-            <Route path="/login">
-              <Login />
-            </Route>
-            <Route path="/new">
-              <NewQuestion />
-            </Route>
-            <Route path="/leader-board">
-              <LeaderBoard />
-            </Route>
-            <Route path="/questions/:id">
-              <QuestionPoll />
-            </Route>
-            <Route>
-              <PageNotFound />
-            </Route>
-          </Switch>
-          {!authedUser && <Redirect to="/login" />}
+          <div className="pt-3">
+            <Switch>
+              <Route exact path="/">
+                <Questions />
+              </Route>
+              <Route path="/login">
+                <Login />
+              </Route>
+              <Route path="/new">
+                <NewQuestion />
+              </Route>
+              <Route path="/leader-board">
+                <LeaderBoard />
+              </Route>
+              <Route path="/questions/:id">
+                <QuestionPoll />
+              </Route>
+              <Route>
+                <PageNotFound />
+              </Route>
+            </Switch>
+            {!authedUser && <Redirect to="/login" />}
+          </div>
         </div>
       </div>
     </Router>

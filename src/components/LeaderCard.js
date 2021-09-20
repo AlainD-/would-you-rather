@@ -8,9 +8,11 @@ import UserAvatar from './UserAvatar';
 export default function LeaderCard({leader, rank}) {
   return (
     <Card key={leader.id} className="mb-3">
-      <Trophy rank={rank} />
       <div className="flex">
-        <UserAvatar url={leader.avatarURL} />
+        <div className="flex flex-column align-self-center">
+          <Trophy rank={rank} />
+          <UserAvatar url={leader.avatarURL} />
+        </div>
         <Divider layout="vertical" />
         <div className="p-fluid flex-grow-1 align-items-center justify-content-center">
           <h3>{leader.name}</h3>

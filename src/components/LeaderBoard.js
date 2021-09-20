@@ -2,6 +2,7 @@ import { useSelector } from 'react-redux';
 import { getLeaderBoard } from '../utils/helper';
 import LeaderCard from './LeaderCard';
 import InfoMessage from './InfoMessage';
+import UserRankingInfo from './UserRankingInfo';
 
 export default function LeaderBoard() {
   const leaders = useSelector(getLeaderBoard);
@@ -12,6 +13,7 @@ export default function LeaderBoard() {
 
   return (
     <>
+      <UserRankingInfo />
       {leaders.map((leader, index) => (
         <LeaderCard key={leader.id} leader={leader} rank={index + 1} />
       ))}

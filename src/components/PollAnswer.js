@@ -1,5 +1,5 @@
-import { Badge } from 'primereact/badge';
 import { ProgressBar } from 'primereact/progressbar';
+import YourVoteTag from './YourVoteTag';
 
 export default function PollAnswer({text, isUserVote, totalVotes = 0, voted = 0}) {
 
@@ -18,11 +18,13 @@ export default function PollAnswer({text, isUserVote, totalVotes = 0, voted = 0}
   const value = totalVotes !== 0 ? Math.floor(voted * 100 / totalVotes) : 0;
 
   return (
-    <div style={cardStyle} className="flex flex-column p-fluid">
-      {isUserVote && <Badge value="Your vote" severity="warning" />}
-      <h3 className="mt-0">{text}</h3>
-      <ProgressBar value={value} />
-      <div className="font-bold flex align-items-center justify-content-center">{legend}</div>
-    </div>
+    <>
+      {isUserVote && <YourVoteTag />}
+      <div style={cardStyle} className="flex flex-column p-fluid">
+        <h3 className="mt-0">{text}</h3>
+        <ProgressBar value={value} />
+        <div className="font-bold flex align-items-center justify-content-center">{legend}</div>
+      </div>
+    </>
   );
 }

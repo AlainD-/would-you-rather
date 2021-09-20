@@ -40,7 +40,7 @@ export default function NewQuestion() {
           placeholder="Enter the first option here"
           maxLength={maxLength}
         />
-        {characterLeft(optionOneText) < 30 && <small id="optionOneText-help" className="p-error p-d-block">{characterLeft(optionOneText)}</small>}
+        {characterLeft(optionOneText) < 30 && <small id="optionOneText-help" className="p-error block flex justify-content-end">{characterLeft(optionOneText)}</small>}
         <Divider align="center">OR</Divider>
         <InputText
           type="text"
@@ -50,7 +50,7 @@ export default function NewQuestion() {
           placeholder="Enter the second option here"
           maxLength={maxLength}
         />
-        {characterLeft(optionTwoText) < 30 && <small id="optionTwoText-help" className="p-error p-d-block">{characterLeft(optionTwoText)}</small>}
+        {characterLeft(optionTwoText) < 30 && <small id="optionTwoText-help" className="p-error block flex justify-content-end">{characterLeft(optionTwoText)}</small>}
         <Button
           type="submit"
           label="Submit"
