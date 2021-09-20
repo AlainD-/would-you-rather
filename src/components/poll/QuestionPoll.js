@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { Redirect } from 'react-router';
-import { getQuestion } from './../utils/helper';
+import { getQuestion } from '../../utils/helper';
 import PollAnswered from './PollAnswered';
 import PollUnAnswered from './PollUnAnswered';
 

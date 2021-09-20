@@ -3,9 +3,9 @@ import { useHistory } from 'react-router-dom';
 import { Button } from 'primereact/button';
 import { Divider } from 'primereact/divider';
 import { Panel } from 'primereact/panel';
-import { getQuestion } from './../utils/helper';
-import QuestionNotFound from './QuestionNotFound';
-import UserAvatar from './UserAvatar';
+import { getQuestion } from '../../utils/helper';
+import QuestionNotFound from '../_common/QuestionNotFound';
+import UserAvatar from '../_common/UserAvatar';
 
 export default function QuestionPreview({id}) {
   const {question, author, authedUser} = useSelector(state => getQuestion(state, id));

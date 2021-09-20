@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
-import { getLeaderBoard } from '../utils/helper';
+import { getLeaderBoard } from '../../utils/helper';
 import LeaderCard from './LeaderCard';
-import InfoMessage from './InfoMessage';
+import InfoMessage from '../_common/InfoMessage';
 import UserRankingInfo from './UserRankingInfo';
 
 export default function LeaderBoard() {

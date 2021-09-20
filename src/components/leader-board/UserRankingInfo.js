@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux';
-import { getLeaderBoard } from '../utils/helper';
+import { getLeaderBoard } from '../../utils/helper';
 
 export default function UserRankingInfo() {
   const leaders = useSelector(getLeaderBoard);

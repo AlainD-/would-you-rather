@@ -3,7 +3,7 @@ import { Card } from 'primereact/card';
 import { Divider } from 'primereact/divider';
 import { Panel } from 'primereact/panel';
 import Trophy from './Trophy';
-import UserAvatar from './UserAvatar';
+import UserAvatar from '../_common/UserAvatar';
 
 export default function LeaderCard({leader, rank}) {
   return (

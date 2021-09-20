@@ -6,7 +6,7 @@ import { Card } from 'primereact/card';
 import { Dropdown } from 'primereact/dropdown';
 import { setAuthedUser } from '../actions';
 import { getUsers } from '../utils/helper';
-import UserAvatar from './UserAvatar';
+import UserAvatar from './_common/UserAvatar';
 
 export default function Login() {
   const history = useHistory();

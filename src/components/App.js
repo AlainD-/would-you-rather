@@ -10,12 +10,12 @@ import { useDispatch, useSelector } from 'react-redux';
 import { handleInitialData } from './../actions/shared';
 import LoadingBar from 'react-redux-loading-bar';
 import Login from './Login';
-import Questions from './Questions';
+import Questions from './questions/Questions';
 import PageNotFound from './PageNotFound';
 import NavBar from './Navbar';
-import QuestionPoll from './QuestionPoll';
-import LeaderBoard from './LeaderBoard';
-import NewQuestion from './NewQuestion';
+import QuestionPoll from './poll/QuestionPoll';
+import LeaderBoard from './leader-board/LeaderBoard';
+import NewQuestion from './new-question/NewQuestion';
 import ErrorMessage from './ErrorMessage';
 
 export default function App() {

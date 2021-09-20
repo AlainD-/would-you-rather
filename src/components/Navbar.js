@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Menubar } from 'primereact/menubar';
 import { Button } from 'primereact/button';
 import { setAuthedUser } from '../actions';
-import UserAvatar from './UserAvatar';
+import UserAvatar from './_common/UserAvatar';
 
 export default function NavBar() {
   const history = useHistory();

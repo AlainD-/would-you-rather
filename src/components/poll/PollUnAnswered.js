@@ -3,12 +3,12 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Button } from 'primereact/button';
 import { Divider } from 'primereact/divider';
 import { Panel } from 'primereact/panel';
-import { getQuestion } from '../utils/helper';
-import { handleAnswerPoll } from './../actions/shared';
-import QuestionNotFound from './QuestionNotFound';
+import { getQuestion } from '../../utils/helper';
+import { handleAnswerPoll } from '../../actions/shared';
+import QuestionNotFound from '../_common/QuestionNotFound';
 import PollOptionChoice from './PollOptionChoice';
 import PollAnswered from './PollAnswered';
-import UserAvatar from './UserAvatar';
+import UserAvatar from '../_common/UserAvatar';
 
 export default function PollUnAnswered({id}) {
   const dispatch = useDispatch();

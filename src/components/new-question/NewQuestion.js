@@ -5,7 +5,7 @@ import { Button } from 'primereact/button';
 import { Divider } from 'primereact/divider';
 import { InputText } from 'primereact/inputtext';
 import { Panel } from 'primereact/panel';
-import { handleAddQuestion } from './../actions/shared';
+import { handleAddQuestion } from '../../actions/shared';
 
 export default function NewQuestion() {
   const history = useHistory();

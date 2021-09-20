@@ -1,11 +1,11 @@
 import { useSelector } from 'react-redux';
 import { Divider } from 'primereact/divider';
 import { Panel } from 'primereact/panel';
-import { getQuestion } from '../utils/helper';
-import QuestionNotFound from './QuestionNotFound';
+import { getQuestion } from '../../utils/helper';
+import QuestionNotFound from '../_common/QuestionNotFound';
 import PollAnswer from './PollAnswer';
 import PollUnAnswered from './PollUnAnswered';
-import UserAvatar from './UserAvatar';
+import UserAvatar from '../_common/UserAvatar';
 
 export default function PollAnswered({id}) {
   const {question, author, authedUser, isAnswered} = useSelector(state => getQuestion(state, id));

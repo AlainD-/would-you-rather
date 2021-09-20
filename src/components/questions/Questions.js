@@ -2,7 +2,7 @@ import { useSelector } from 'react-redux';
 import { sortBy as _sortBy } from 'lodash/fp';
 import { TabView, TabPanel } from 'primereact/tabview';
 import QuestionPreview from './QuestionPreview';
-import InfoMessage from './InfoMessage';
+import InfoMessage from '../_common/InfoMessage';
 
 function getUserQuestions({authedUser, users, questions}) {
   const answeredQuestionIds = !authedUser ? [] : Object.keys(users[authedUser]?.answers || {});
