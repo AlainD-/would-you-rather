@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useHistory } from 'react-router';
+import { useLocation } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { Button } from 'primereact/button';
 import { Card } from 'primereact/card';
@@ -12,9 +13,21 @@ export default function Login() {
   const history = useHistory();
   const dispatch = useDispatch();
   const users = useSelector(getUsers);
+  const location = useLocation();
   const [user, setUser] = useState(null);
 
-  const header = <img alt="logo" src='/images/logo/logo.svg' style={{backgroundColor: 'var(--blue-900)'}} />;
+  const redirectPath = () => {
+    if (location.search) {
+      const redirects = location.search
+        .replace('?', '')
+        .split('&')
+        .filter(part => part.startsWith('redirect='))
+        .map(part => part.replace('redirect=', ''));
+      return redirects.length > 0 ? redirects[0] : '/';
+    };
+
+    return '/';
+  };
 
   const handleChange = e => {
     setUser(() => e.target.value);
@@ -23,8 +36,10 @@ export default function Login() {
   const handleSubmit = e => {
     e.preventDefault();
     dispatch(setAuthedUser(user.id));
-    history.push('/');
+    history.push(redirectPath());
   };
+
+  const header = <img alt="logo" src='/images/logo/logo.svg' style={{backgroundColor: 'var(--blue-900)'}} />;
 
   const userOptionTemplate = (user) => {
     return (

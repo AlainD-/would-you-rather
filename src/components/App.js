@@ -4,9 +4,9 @@ import 'primereact/resources/primereact.min.css';
 import 'primeicons/primeicons.css';
 import 'primeflex/primeflex.css';
 import { useEffect } from 'react';
-import { Redirect, Route, Switch } from 'react-router';
+import { Route, Switch } from 'react-router';
 import { BrowserRouter as Router } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { handleInitialData } from './../actions/shared';
 import LoadingBar from 'react-redux-loading-bar';
 import Login from './Login';
@@ -17,11 +17,10 @@ import QuestionPoll from './poll/QuestionPoll';
 import LeaderBoard from './leader-board/LeaderBoard';
 import NewQuestion from './new-question/NewQuestion';
 import ErrorMessage from './ErrorMessage';
+import Redirection from './Redirection';
 
 export default function App() {
   const dispatch = useDispatch();
-  const authedUser = useSelector(({authedUser}) => authedUser);
-  // const loading = useSelector(({authedUser}) => authedUser === null);
 
   useEffect(() => {
     dispatch(handleInitialData());
@@ -55,7 +54,7 @@ export default function App() {
                 <PageNotFound />
               </Route>
             </Switch>
-            {!authedUser && <Redirect to="/login" />}
+            <Redirection />
           </div>
         </div>
       </div>
