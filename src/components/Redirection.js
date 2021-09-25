@@ -11,7 +11,10 @@ export default function Redirection() {
   return (
     <>
       {!authedUser && !loginRoute && !notFoundRoute && (
-        <Redirect to={{pathname: "/login", search: `redirect=${pathname}`}} />
+        <Redirect to={{
+          pathname: "/login",
+          search: pathname !== '/' ? `redirect=${pathname}` : undefined
+        }} />
       )}
     </>
   );

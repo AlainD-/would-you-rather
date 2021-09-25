@@ -11,8 +11,8 @@ export default function NewQuestion() {
   const history = useHistory();
   const dispatch = useDispatch();
   const authedUser = useSelector(({authedUser}) => authedUser);
-  const [optionOneText, setOptionOneText] = useState(null);
-  const [optionTwoText, setOptionTwoText] = useState(null);
+  const [optionOneText, setOptionOneText] = useState('');
+  const [optionTwoText, setOptionTwoText] = useState('');
   const maxLength = 100;
 
   const isDisabled = !optionOneText || !optionTwoText;

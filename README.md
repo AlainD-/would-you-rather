@@ -1,3 +1,5 @@
+![Would You Rather](https://raw.githubusercontent.com/AlainD-/would-you-rather/master/public/images/logo/logo.svg)
+
 # Would You Rather?
 
 This is a version of the famous "Would you rather" game. You need to sign in in order to play.
@@ -26,8 +28,18 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ## Important information
 
-This project is part of the nano degree program "React" from Udacity. This project is read-only.
+* This project is read-only.
+* This project is part of the nano degree program "React" from [Udacity](https://udacity.com).
+* The objective of this project was to demonstrate my skills to implement an interactive application in [React](https://github.com/facebook/react), using [Redux](https://github.com/reduxjs/redux) and [React-Redux](https://github.com/reduxjs/react-redux) as a global state management.
+* Asynchronous dispatches are performed with the usage of the [redux-thunk](https://github.com/reduxjs/redux-thunk) middleware
+* [React-router](https://reactrouter.com/web) is also used in this project to handle the different views and sections of this application
+* The whole application has been built initially with React version `17.0.2` and uses in its original state only functional components and react hooks.
+* Most of the UI components come from [PrimeReact](https://www.primefaces.org/primereact/) version `6.5.1` and [PrimeFlex](https://www.primefaces.org/primeflex) version `3.0.1`
 
 ## Contribuiting
 
 If you want to contribute to the project and improve it, check-out the [DEVELOPMENT](DEVELOPMENT.md) instructions.
+
+## Authors
+
+* **Alain D'EURVEILHER** - *Initial work* - [AlainD.](https://github.com/AlainD-)
